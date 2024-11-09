@@ -28,13 +28,15 @@
 
     <form class="dadosJogo" method="POST" action="{{ url_for('jogar') }}">
         <!-- Campo para tentar adivinhar uma letra -->
-        <label for="letra">Enter a letter:</label>
-        <input type="text" id="letra" name="letra" maxlength="1">
-        
+        <div class="flexInputs">
+            <label for="letra">Enter a letter:</label>
+            <input type="text" id="letra" name="letra" maxlength="1">
+        </div>
         <!-- Campo para tentar adivinhar a palavra inteira -->
-        <label for="palavra_inteira">Guess the word:</label>
-        <input type="text" id="palavra_inteira" name="palavra_inteira" maxlength="20">
-    
+        <div class="flexInputs" id="palavraInteria">
+            <label for="palavra_inteira">Guess the word:</label>
+            <input type="text" id="palavra_inteira" name="palavra_inteira" maxlength="20">
+        </div>
         <button type="submit">Try</button>
     </form>
 

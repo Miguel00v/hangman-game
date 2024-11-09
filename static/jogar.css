@@ -28,7 +28,7 @@ h1{
 #mensagem_correta{
    color: cadetblue;
    margin-bottom: 0.5em;
-} 
+}
 
 #letra, #palavra_inteira{
    background-color: black;
@@ -36,6 +36,34 @@ h1{
    color: white;
    padding: 12px;
    font-size: 0.8em;
+}
+
+#palavraInteria{
+    margin-top:1em;
+}
+
+.flexInputs {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em; /* Espaçamento entre a label e o input */
+    justify-content: flex-start; /* Pode usar 'center' ou 'flex-start' para alinhar melhor */
+    align-items: center; /* Alinha os itens verticalmente */
+    width: 100%; /* Tornar responsivo */
+    max-width: 600px; /* Definir uma largura máxima, se necessário */
+    margin: 10px auto; /* Centralizar os campos */
+}
+
+/* Estilizando a label para que ocupe o espaço necessário */
+.flexInputs label {
+    width: 30%; /* Defina uma largura fixa ou percentual para a label */
+}
+
+/* Estilizando o input para ocupar o restante do espaço */
+.flexInputs input {
+    width: 70%; /* O input ocupa o restante do espaço disponível */
+    padding: 10px; /* Ajuste para tornar o input mais espaçoso */
+    font-size: 16px; /* Tamanho da fonte do input */
+    box-sizing: border-box; /* Inclui padding no cálculo da largura */
 }
 
  button{
@@ -74,3 +102,13 @@ h1{
    align-items: center;    /* Centraliza verticalmente (se necessário) */
    height: 100%;           /* Ajuste conforme necessário */
  }
+
+/* Adiciona responsividade */
+@media (max-width: 768px) {
+    .flexInputs {
+        max-width: 90%; /* Faz os inputs ocuparem 90% da largura em telas menores */
+    }
+    .flexInputs input {
+        width: 100%; /* Ajusta a largura do input */
+    }
+}
