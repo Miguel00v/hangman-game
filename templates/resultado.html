@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="../static/jogar.css">
+
+</head>
+<body>
+    
+    {% if mensagem == 'You lost!' %}
+        <h1 style="color:red;">{{ mensagem }}</h1>
+    {% else %}
+        <h1>{{ mensagem }}</h1>
+    {% endif %}
+
+    <p class="dadosJogo">The word was: <strong>{{ palavra }}</strong></p>
+    <div class="center-container">
+        <a class="linkJogar" href="{{ url_for('index') }}" title="Play again">Play again!</a>
+    </div>
+
+</body>
+</html>

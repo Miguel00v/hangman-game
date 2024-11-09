@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/jogar.css">
+    <title>Hangman Game</title>
+</head>
+<body>
+
+    <h1>Welcome to the Hangman Game!</h1>
+    <div class="dadosJogo">
+        <p>{{pista}}</p>
+        <p><strong>Word:</strong> {{tracejado}}</p>
+        <p id="chances"><strong>Remaining chances:</strong> {{chances}}</p>
+        <p><strong>Tried letters:</strong> {{letras_tentadas | join(', ')}}</p>
+    </div>
+
+    {% if mensagem %}
+
+        <p id="mensagens">{{ mensagem }}</p>
+
+    {% elif mensagem_correta %}
+
+        <p id="mensagem_correta">{{ mensagem_correta }}</p>
+
+    {% endif %}
+
+    <form class="dadosJogo" method="POST" action="{{ url_for('jogar') }}">
+        <!-- Campo para tentar adivinhar uma letra -->
+        <label for="letra">Enter a letter:</label>
+        <input type="text" id="letra" name="letra" maxlength="1">
+        
+        <!-- Campo para tentar adivinhar a palavra inteira -->
+        <label for="palavra_inteira">Guess the word:</label>
+        <input type="text" id="palavra_inteira" name="palavra_inteira" maxlength="20">
+    
+        <button type="submit">Try</button>
+    </form>
+
+</body>
+</html>
